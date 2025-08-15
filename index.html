@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amila J J — Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="logo" href="#home">Amila</a>
+      <button id="themeToggle" class="btn" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home Section -->
+    <section id="home" class="section hero reveal">
+      <div class="container">
+        <h1>Hi, I’m <span class="highlight">Amila J J</span></h1>
+        <p class="subtitle">B.Tech IT • Aspiring Java Developer</p>
+        <div class="cta">
+          <a href="#projects" class="btn primary">View Projects</a>
+          <a href="#contact" class="btn outline">Contact Me</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section reveal">
+      <div class="container cols">
+        <div>
+          <h2>About</h2>
+          <p>I’m a B.Tech Information Technology student with a solid foundation in core Java and beginner-level Python and SQL. I enjoy building clean, accessible UIs and learning by doing.</p>
+          <ul class="bullets">
+            <li>Panimalar Engineering College • 2022–2026</li>
+            <li>CGPA: 8.4/10</li>
+          </ul>
+        </div>
+            </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section reveal">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="grid skills-grid">
+          <div class="card">
+            <h3>Languages</h3>
+            <p>Java (core basics), Python (basic scripting), SQL (basic queries)</p>
+          </div>
+          <div class="card">
+            <h3>Web</h3>
+            <p>HTML, CSS, basic JavaScript, Bootstrap basics</p>
+          </div>
+          <div class="card">
+            <h3>Tools</h3>
+            <p>GitHub and VS Code</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievements -->
+    <section id="achievements" class="section reveal">
+      <div class="container">
+        <h2>Achievements</h2>
+        <div class="grid skills-grid">
+          <div class="card">
+            <h3>Academic</h3>
+            <ul class="bullets">
+              <li>CGPA: 8.4/10 (current)</li>
+              <li>Presented “Autonomous Drone Navigation” at PEC symposium</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Competitions</h3>
+            <ul class="bullets">
+              <li>Presented "Child Predator Detection on Social Media" at PEC CONFERENCE</li>
+              <li>"Logo Designing" in Sai Ram Engineerinng College</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Certifications</h3>
+            <ul class="bullets">
+              <li>Python (Basics) — UDEMY</li>
+              <li>CSS AND BOOTSTRAP(Basics) — UDEMY</li>
+              <li>CORE JAVA - UDEMY</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="section reveal">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="grid project-grid">
+
+          <!-- Portfolio Project -->
+          <article class="card project">
+                        <div class="project-body">
+              <h3>Personal Portfolio Website</h3>
+              <p>A responsive portfolio website built using HTML, CSS, and JavaScript to showcase my skills, projects, and contact information. Includes dark mode and smooth scrolling.</p>
+              <a class="btn small" href="https://yourusername.github.io/MyPortfolio/" target="_blank">View Live</a>
+            </div>
+          </article>
+
+          <!-- Project 1 -->
+          <article class="card project">
+                       <div class="project-body">
+              <h3>Autonomous Drone Navigation</h3>
+              <p>Concept demo for disaster response presented at PEC conference.</p>
+              <a class="btn small" href="#" aria-disabled="true">View (coming soon)</a>
+            </div>
+          </article>
+
+         
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section reveal">
+      <div class="container">
+        <h2>Contact</h2>
+        <form class="contact-form" onsubmit="return false;">
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your name" required />
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            Message
+            <textarea name="message" rows="4" placeholder="Say hello"></textarea>
+          </label>
+          <div class="form-actions">
+            <button class="btn primary" type="submit">Send (demo)</button>
+            <a class="btn outline" href="mailto:amila3028@gmail.com">Email Me</a>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> Amila J J • <a href="https://www.linkedin.com/in/amilajj" target="_blank" rel="noreferrer">LinkedIn</a> • <a href="https://github.com/Amila3025" target="_blank" rel="noreferrer">GitHub</a></p>
+    </div>
+  </footer>
+
+  <!-- JavaScript inside HTML -->
+  <script>
+    // DARK MODE TOGGLE
+    const themeToggle = document.getElementById("themeToggle");
+    const body = document.body;
+
+    if (localStorage.getItem("theme") === "dark") {
+      body.classList.add("dark-theme");
+      themeToggle.textContent = "☀️";
+    }
+
+    themeToggle.addEventListener("click", () => {
+      body.classList.toggle("dark-theme");
+      if (body.classList.contains("dark-theme")) {
+        themeToggle.textContent = "☀️";
+        localStorage.setItem("theme", "dark");
+      } else {
+        themeToggle.textContent = "🌙";
+        localStorage.setItem("theme", "light");
+      }
+    });
+
+    // REVEAL ON SCROLL
+    const reveals = document.querySelectorAll(".reveal");
+    function revealOnScroll() {
+      for (let i = 0; i < reveals.length; i++) {
+        let windowHeight = window.innerHeight;
+        let elementTop = reveals[i].getBoundingClientRect().top;
+        let revealPoint = 100;
+        if (elementTop < windowHeight - revealPoint) {
+          reveals[i].classList.add("visible");
+        }
+      }
+    }
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+
+    // FOOTER YEAR
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
